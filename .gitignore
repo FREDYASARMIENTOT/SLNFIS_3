@@ -1,0 +1,118 @@
+# =============================================================================
+# 🧬 SYMBIOMEMESIS v7.0 - GIT IGNORE ESTRATÉGICO
+# Proyecto: Tesis Maestría ICT - Universidad del Rosario
+# =============================================================================
+
+# --- 1. SEGURIDAD Y CREDENCIALES (CRÍTICO) ---
+# No rastrear secretos, llaves ni variables de entorno
+.env
+.env.*
+*.key
+*.pem
+*.cert
+*.secret
+*.token
+credentials.json
+
+# --- 2. DATA LAKE Y TELEMETRÍA (DATOS) ---
+# Se ignora la materia prima (CSV) y los resultados (LOGS) 
+# para mantener el repositorio liviano y proteger datos institucionales.
+ORIGENDATOS/
+LOGS/
+VERSIONES/
+data/
+*.csv
+*.pdf
+*.log
+*.sqlite
+*.jsonl
+# Persistencia local de la Cinta (Snapshotting)
+*.json
+!package.json
+!composer.json
+
+# --- 3. ENTORNOS VIRTUALES Y DEPENDENCIAS ---
+# Ignorar entornos locales, gestores de paquetes y aislación de Python
+venv/
+env/
+venvFIS/
+.conda/
+.python-version
+.venv/
+bin/
+include/
+share/
+lib/
+lib64/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# --- 4. ARTEFACTOS DE COMPILACIÓN Y CACHÉ ---
+# Limpieza de archivos temporales de ejecución de Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# --- 5. INVESTIGACIÓN Y ANÁLISIS (JUPYTER/PYTEST) ---
+# Artefactos de pruebas unitarias y notebooks de experimentación
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+.pytest_cache/
+.tox/
+.coverage
+.cache
+.hypothesis/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.history/
+
+# --- 6. CONFIGURACIÓN DE IDE (VSCODE / JETBRAINS) ---
+# Preferencias de editor que no deben compartirse en el equipo
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+.project
+.pydevproject
+.settings/
+
+# --- 7. ARCHIVOS DE SISTEMA OPERATIVO ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# =============================================================================
+# 🏛️ REGLAS DE GOBERNANZA E INTEGRIDAD
+# =============================================================================
+
+# Permitir explícitamente la carpeta de activos institucionales 
+# (Requerido para la generación de reportes y manuales)
+!ARCHIVOS/
+!ARCHIVOS/logo ur.webp
+
+# Permitir archivos de configuración base si existieran dentro de carpetas ignoradas
+!.gitkeep
